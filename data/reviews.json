@@ -1,0 +1,58 @@
+[
+  {
+    "id": "rev-004",
+    "dateAdded": "2026-10-18",
+    "reviewerName": "Niki",
+    "reviewerAvatar": "assets/images/avatar-1.svg",
+    "instagramHandle": "",
+    "instagramUrl": "",
+    "mediaType": "image",
+    "mediaUrl": "assets/images/review-1.svg",
+    "rating": "10/10, would do again",
+    "reviewText": "The premium package included tea from a thermos and a full hour of professionally curated silence. Polina pointed at a cloud, Zoko sat on my boot, and nobody spoke. I have never felt so guided.",
+    "trailName": "Autumn Ridge — Advanced Contemplation · Oct 2026",
+    "trailUrl": "https://www.komoot.com/discover"
+  },
+  {
+    "id": "rev-003",
+    "dateAdded": "2026-09-29",
+    "reviewerName": "Maria",
+    "reviewerAvatar": "assets/images/avatar-2.svg",
+    "instagramHandle": "@maria.outdoors",
+    "instagramUrl": "https://instagram.com/",
+    "mediaType": "image",
+    "mediaUrl": "assets/images/review-2.svg",
+    "rating": "10/10, will do it again!",
+    "reviewText": "Our guides demonstrated exceptional leadership by walking 50 meters ahead of us for most of the day. When we got lost, Polina called it 'route exploration' and Zoko charged no extra.",
+    "trailName": "Seven Lakes Loop — Executive Expedition · Sep 2026",
+    "trailUrl": "https://www.komoot.com/discover"
+  },
+  {
+    "id": "rev-002",
+    "dateAdded": "2026-08-14",
+    "reviewerName": "Alex",
+    "reviewerAvatar": "assets/images/avatar-3.svg",
+    "instagramHandle": "@alex.walks",
+    "instagramUrl": "https://instagram.com/",
+    "mediaType": "image",
+    "mediaUrl": "assets/images/review-3.svg",
+    "rating": "-100/10, I hate hiking now",
+    "reviewText": "I was told this was 'a nice walk'. It was 22 kilometres. The safety briefing consisted of the word 'eh' while Zoko ate half my sandwich. My calves have retained legal counsel.",
+    "trailName": "Malyovitsa Traverse — Character Building · Aug 2026",
+    "trailUrl": "https://connect.garmin.com/"
+  },
+  {
+    "id": "rev-001",
+    "dateAdded": "2026-07-19",
+    "reviewerName": "Elena",
+    "reviewerAvatar": "assets/images/avatar-4.svg",
+    "instagramHandle": "",
+    "instagramUrl": "",
+    "mediaType": "image",
+    "mediaUrl": "assets/images/review-4.svg",
+    "rating": "11/10 for Zoko, 2/10 for my knees",
+    "reviewText": "Promised panoramic views. Delivered the inside of a cloud for five hours. Polina packed three kinds of cheese and Zoko let me pet his ears when the incline hit 35%.",
+    "trailName": "Vitosha Cloud Immersion · Jul 2026",
+    "trailUrl": "https://www.komoot.com/discover"
+  }
+]

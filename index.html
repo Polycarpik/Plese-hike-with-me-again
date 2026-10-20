@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polina &amp; Zoko — Certified Solitude Solutions</title>
+  <meta name="description" content="Industry-leading guided hiking experiences. Trusted by several friends and one dog." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=8" />
+</head>
+<body>
+
+
+  <main>
+    <!-- =====================================================================
+         SCREEN 1: FULL-VIEWPORT HERO WITH PHOTO BACKGROUND (BOTTOM-CENTER)
+         ===================================================================== -->
+    <section id="screen-1" class="screen screen-hero">
+      <div class="container hero-wrap">
+        <div class="hero-content-box">
+          <span class="kicker-pill">Professional Hiking Guide · Est. last spring</span>
+          <h1 class="display-title">
+            Elite solitude,<br />
+            <em>professionally delivered.</em>
+          </h1>
+          <p class="lead-paragraph">
+            With years of experience walking in mostly the right direction, I provide end-to-end trail solutions for individuals seeking quiet, perspective, and sore legs.
+          </p>
+          <p class="body-paragraph">
+            Hiking brings me solitude. Specifically, solitude with my dog, <strong>Zoko</strong> — who never asks if we are almost there and never talks about his startup at 2,000 meters. For a modest fee of zero, I will bring that solitude to you, alongside several other people, which somewhat defeats the point.
+          </p>
+          <div class="hero-cta-row">
+            <a href="#screen-3" class="btn-primary">View upcoming hikes →</a>
+            <a href="#screen-2" class="btn-secondary">Read case studies</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         STATS STRIPE: SEPARATE BACKGROUND STRIPE UNDER SCREEN 1 (LOVABLE STYLE)
+         ===================================================================== -->
+    <section class="stats-stripe" aria-label="Key performance metrics">
+      <div class="container">
+        <div class="stats-stripe-grid">
+          <div class="stat-col">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Summits reached</span>
+          </div>
+          <div class="stat-col">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Clients returned*</span>
+          </div>
+          <div class="stat-col">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Solitude delivered</span>
+          </div>
+        </div>
+        <p class="stats-footnote">
+          *From the hike. Returning for another one is a separate metric we do not track.
+        </p>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SCREEN 2: POLAROID CASE STUDIES CAROUSEL (SCROLLBAR UNDERNEATH)
+         ===================================================================== -->
+    <section id="screen-2" class="screen screen-reviews">
+      <div class="container">
+        <div class="reviews-block">
+          <div class="section-head-row">
+            <div>
+              <h2 class="section-heading">Case studies</h2>
+              <p class="section-sub">
+                Verified client testimonials. Clients are my friends. This has not affected objectivity.
+              </p>
+            </div>
+          </div>
+
+          <div class="carousel-viewport" id="reviews-viewport" aria-live="polite">
+            <div class="carousel-track" id="reviews-track">
+              <!-- Populated from data/reviews.json sorted by dateAdded as vertical Polaroid cards -->
+            </div>
+          </div>
+
+          <!-- Scrollbar underneath the reviews -->
+          <div class="carousel-scrollbar-track" id="carousel-scrollbar-track" aria-label="Review carousel progress">
+            <div class="carousel-scrollbar-thumb" id="carousel-scrollbar-thumb"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SCREEN 3: UPCOMING HIKES (MAIN FOCUS) + COMPACT SUFFERING LEGEND
+         ===================================================================== -->
+    <section id="screen-3" class="screen screen-hikes">
+      <div class="container">
+        <!-- Main Section Heading: Upcoming Hikes -->
+        <div class="hikes-section-hero-head">
+          <h2 class="main-hikes-heading">Upcoming hikes</h2>
+          <p class="section-sub">
+            Carefully curated trails where I walk in front with Zoko and you question your cardio behind us.
+          </p>
+        </div>
+
+        <!-- Primary Focus: Upcoming Hikes Bubble Cards -->
+        <div class="upcoming-list-wrapper">
+          <div class="hikes-bubbles-list" id="hikes-list">
+            <!-- Populated by js/app.js from data/hikes.json -->
+          </div>
+        </div>
+
+        <!-- Secondary Compact Legend: Gastronomic Effort & Suffering Classification -->
+        <div class="classification-panel">
+          <div class="classification-header">
+            <div>
+              <h3 class="classification-subheading">Gastronomic Effort &amp; Suffering Classification</h3>
+              <p class="classification-intro">
+                Standard alpine grades (T1–T6) are pretentious and meaningless. We classify all expeditions strictly by <strong>Duration</strong> and <strong>Required Emotional Support Calories</strong>.
+              </p>
+            </div>
+
+            <!-- Emoji Symbol Key (Stacked vertically: one icon under another) -->
+            <div class="symbol-legend-box">
+              <span class="symbol-legend-title">MEAL AGENDA</span>
+              <div class="symbol-legend-items">
+                <div class="symbol-key-item">
+                  <span class="ration-icon-key icon-food" aria-hidden="true">🍱</span>
+                  <span><strong>Proper Meal</strong> (Sandwich / Bowl)</span>
+                </div>
+                <div class="symbol-key-item">
+                  <span class="ration-icon-key icon-snack" aria-hidden="true">🍏</span>
+                  <span><strong>Snack</strong> (Sugar / Trail Bribe)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 Complexity Cards: Complexity Header -> Hours -> Explainer -> Snack Icons Underneath -->
+          <div class="tiers-agenda-grid">
+            <!-- Easy -->
+            <div class="tier-agenda-card tier-easy">
+              <h4 class="tier-complexity-header">
+                <span class="level-dot level-easy"></span>
+                Easy (Supernoob)
+              </h4>
+              <p class="tier-hours-explanation">1–3 hours of walking</p>
+              <p class="tier-description">
+                Basically a glorified dog walk. Bring one granola bar or a banana so you have something to hold while looking at a tree.
+              </p>
+              <div class="tier-sample-icons" data-profile="snack">
+                <span class="ration-chip easy">🍏</span>
+              </div>
+            </div>
+
+            <!-- Medium -->
+            <div class="tier-agenda-card tier-medium">
+              <h4 class="tier-complexity-header">
+                <span class="level-dot level-medium"></span>
+                Medium ("Easy for a sporty bro")
+              </h4>
+              <p class="tier-hours-explanation">4–7 hours of walking</p>
+              <p class="tier-description">
+                Requires actual cardiovascular literacy. One summit sandwich, two emergency sugar spikes, and moderate questioning of your life choices.
+              </p>
+              <div class="tier-sample-icons" data-profile="food,snack,snack">
+                <span class="ration-chip medium">🍱</span>
+                <span class="ration-chip medium">🍏</span>
+                <span class="ration-chip medium">🍏</span>
+              </div>
+            </div>
+
+            <!-- Hardcore -->
+            <div class="tier-agenda-card tier-hard">
+              <h4 class="tier-complexity-header">
+                <span class="level-dot level-hard"></span>
+                Hardcore
+              </h4>
+              <p class="tier-hours-explanation">7+ hours of walking</p>
+              <p class="tier-description">
+                Two full meals, pocket cheese, sour gummies, electrolytes, and a legally binding promise not to cry until we reach the car.
+              </p>
+              <div class="tier-sample-icons" data-profile="food,food,snack,snack,snack">
+                <span class="ration-chip hard">🍱</span>
+                <span class="ration-chip hard">🍱</span>
+                <span class="ration-chip hard">🍏</span>
+                <span class="ration-chip hard">🍏</span>
+                <span class="ration-chip hard">🍏</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SCREEN 4: DARKER END-OF-PAGE CONTACT SCREEN + PADDED COPYRIGHT FOOTER
+         ===================================================================== -->
+    <section id="screen-4" class="screen screen-contact">
+      <div class="container contact-center-wrap">
+        <div class="contact-card-centered">
+          <h2 class="contact-heading">Begin your journey.</h2>
+          <p class="contact-copy">
+            Our onboarding process is simple: you message me, I send you a Komoot link, you complain about the start time. Spots are allocated on a first-come, first-whined basis.
+          </p>
+
+          <div class="contact-buttons-grid">
+            <!-- Instagram Styled Button -->
+            <a
+              href="https://instagram.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="conn-btn conn-instagram"
+            >
+              <span class="conn-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </span>
+              <div class="conn-text">
+                <span class="conn-label">Instagram</span>
+                <span class="conn-sub">Visual proof &amp; DMs ↗</span>
+              </div>
+            </a>
+
+            <!-- Telegram Styled Button -->
+            <a
+              href="https://t.me/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="conn-btn conn-telegram"
+            >
+              <span class="conn-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </span>
+              <div class="conn-text">
+                <span class="conn-label">Telegram</span>
+                <span class="conn-sub">Fastest trail dispatch ↗</span>
+              </div>
+            </a>
+
+            <!-- Email Styled Button -->
+            <a
+              href="mailto:polina@example.com?subject=Request%20to%20Join%20a%20Hike"
+              class="conn-btn conn-email"
+            >
+              <span class="conn-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </span>
+              <div class="conn-text">
+                <span class="conn-label">Email</span>
+                <span class="conn-sub">Formal excuses &amp; inquiries ↗</span>
+              </div>
+            </a>
+          </div>
+
+          <p class="disclaimer">
+            Not a licensed guide. Not insured. Snacks provided at Zoko's discretion.
+          </p>
+        </div>
+
+        <footer class="bottom-copyright">
+          <div>© <span id="year">2026</span> POLINA &amp; ZOKO ALPINE SOLITUDE SYNDICATE. ALL RIGHTS RESERVED.</div>
+          <div>BUILT WITH ZERO FRAMEWORKS &amp; 100% PASSIVE-AGGRESSIVE CARDIO.</div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js?v=8" defer></script>
+</body>
+</html>

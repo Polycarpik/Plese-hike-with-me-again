@@ -1,0 +1,46 @@
+[
+  {
+    "id": "hike-001",
+    "date": "2026-11-01",
+    "title": "That hill behind the monastery",
+    "distanceKm": 6.4,
+    "ascentM": 240,
+    "durationHours": 2.0,
+    "travelFromSofia": "35 min from Sofia",
+    "komootUrl": "https://www.komoot.com/discover",
+    "snackProfile": ["snack"]
+  },
+  {
+    "id": "hike-002",
+    "date": "2026-11-08",
+    "title": "Rila Ridge — Executive Contemplation Loop",
+    "distanceKm": 14.8,
+    "ascentM": 790,
+    "durationHours": 5.5,
+    "travelFromSofia": "1h 20m from Sofia",
+    "komootUrl": "https://www.komoot.com/discover",
+    "snackProfile": ["food", "snack", "snack"]
+  },
+  {
+    "id": "hike-003",
+    "date": "2026-11-15",
+    "title": "Pirin Full-Day Synergy & Calf Destruction",
+    "distanceKm": 24.5,
+    "ascentM": 1520,
+    "durationHours": 8.5,
+    "travelFromSofia": "2h 15m from Sofia",
+    "komootUrl": "https://www.komoot.com/discover",
+    "snackProfile": ["food", "food", "snack", "snack", "snack"]
+  },
+  {
+    "id": "hike-004",
+    "date": "2026-11-22",
+    "title": "Vitosha Sunset — Minimal Small Talk Edition",
+    "distanceKm": 9.2,
+    "ascentM": 460,
+    "durationHours": 3.0,
+    "travelFromSofia": "25 min from Sofia",
+    "komootUrl": "https://www.komoot.com/discover",
+    "snackProfile": ["snack"]
+  }
+]

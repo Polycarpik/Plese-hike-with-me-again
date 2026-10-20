@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <rect width="800" height="1000" fill="#17241e"/>
+  <g fill="none" stroke="#d4c7b0" stroke-opacity="0.1" stroke-width="1.5">
+    <circle cx="400" cy="400" r="280"/>
+    <circle cx="400" cy="400" r="220"/>
+    <circle cx="400" cy="400" r="160"/>
+  </g>
+  <polygon points="0,780 260,450 510,660 800,360 800,1000 0,1000" fill="#101a15"/>
+  <rect x="40" y="40" width="720" height="920" fill="none" stroke="#d4c7b0" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="8 8"/>
+  <text x="400" y="830" text-anchor="middle" fill="#f3eee6" font-family="monospace" font-size="18" letter-spacing="3">PORTRAIT PLACEHOLDER: POLINA &amp; ZOKO</text>
+  <text x="400" y="865" text-anchor="middle" fill="#a5b5aa" font-family="monospace" font-size="14" letter-spacing="1.5">assets/images/portrait-polina-zoko.svg</text>
+</svg>

@@ -1,0 +1,1016 @@
+/* ==========================================================================
+   Polina & Zoko — Warm Sunset & Olive Palette
+   Natural Landing-Page Flow + Lovable Stats Stripe + Polaroid Carousel + Hike Bubbles
+   ========================================================================== */
+
+:root {
+  /* Distinct Warm Section Backgrounds from the Sunset Palette */
+  --screen1-bg: #f9f3f1; /* Pale Sunset */
+  --stripe-bg: #e7c6b6;  /* Warm Terracotta Blush for the Stats Stripe */
+  --screen2-bg: #f4e6df; /* Soft Sunset Sand */
+  --screen3-bg: #f4f5e4; /* Pale Golden Sage */
+  --screen4-bg: #3e1d11; /* Deep Sunset Espresso for end-of-page feel */
+
+  --bg-card: #fffcf9;
+  --bg-blush: #f2e2da;
+
+  --text-espresso: #331910;
+  --text-brown: #582817;
+  --text-muted: #7d5343;
+  --text-light: #9e7768;
+
+  --accent-sunset: #d4572e;
+  --accent-sunset-hover: #b94520;
+  --accent-crimson: #8b2635;
+
+  --border-warm: #e2c7bc;
+  --border-strong: #cfa999;
+
+  /* Complexity / Suffering Colors aligned with the Sunset & Olive Palette */
+  /* 1-3h Easy (Olive / Sage) */
+  --easy-bg: #eef3d2;
+  --easy-border: #8fa339;
+  --easy-text: #445111;
+
+  /* 4-7h Medium (Deep Golden Ochre) */
+  --medium-bg: #faecc8;
+  --medium-border: #d99f36;
+  --medium-text: #6e480b;
+
+  /* 7+h Hardcore (Soft Crimson / Deep Sunset) */
+  --hard-bg: #f6dde0;
+  --hard-border: #a33241;
+  --hard-text: #7a1c29;
+
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --header-h: 64px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--screen1-bg);
+  color: var(--text-espresso);
+  font-family: var(--font-sans);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--screen1-bg);
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1140px, 90vw);
+  margin-inline: auto;
+}
+
+/* ==========================================================================
+   LANDING-PAGE SECTIONS & DISTINCT WARM BACKGROUNDS
+   ========================================================================== */
+
+.screen {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border-warm);
+  position: relative;
+}
+
+/* Screen 1: Full 100vh viewport height on laptop so you only see Screen 1 initially,
+   with pure ungraded photo anchored bottom-center & overflow cropped */
+.screen-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #d9a088;
+  background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=2000&q=85');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  padding: 3.5rem 0;
+}
+
+@media (min-width: 960px) and (min-height: 640px) {
+  .screen-hero {
+    height: 100vh;
+  }
+}
+
+/* ==========================================================================
+   STATS STRIPE (LOVABLE STYLE UNDER SCREEN 1)
+   ========================================================================== */
+
+.stats-stripe {
+  background-color: var(--stripe-bg);
+  border-bottom: 1px solid var(--border-strong);
+  padding: 3.25rem 0 2.5rem;
+}
+
+.stats-stripe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(88, 40, 23, 0.16);
+}
+
+.stat-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 4.5vw, 3.8rem);
+  line-height: 1;
+  color: var(--text-espresso);
+}
+
+.stat-label {
+  font-size: 0.92rem;
+  color: var(--text-brown);
+  margin-top: 0.45rem;
+}
+
+.stats-footnote {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-top: 0.85rem;
+}
+
+/* Screen 2: Polaroid Case Studies */
+.screen-reviews {
+  background-color: var(--screen2-bg);
+}
+
+/* Screen 3: Pale Golden Sage with evergreens ONLY in the outer side margins around the main info panel */
+.screen-hikes {
+  background-color: var(--screen3-bg);
+  background-image:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent calc(50% - 610px),
+      var(--screen3-bg) calc(50% - 570px),
+      var(--screen3-bg) calc(50% + 570px),
+      transparent calc(50% + 610px),
+      transparent 100%
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewBox='0 0 128 128'%3E%3Cg fill='%23dce0bf'%3E%3Cpath d='M32 20 L25 32 H29 L23 42 H41 L35 32 H39 Z'/%3E%3Crect x='31' y='42' width='2' height='4'/%3E%3Cpath d='M96 84 L89 96 H93 L87 106 H105 L99 96 H103 Z'/%3E%3Crect x='95' y='106' width='2' height='4'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat, repeat;
+  background-size: 100% 100%, 128px 128px;
+}
+
+/* Screen 4: Darker Deep Sunset Espresso for true end-of-page feel */
+.screen-contact {
+  background: linear-gradient(180deg, #582817 0%, #33150b 100%);
+  border-bottom: none;
+  padding: 5.5rem 0 2.5rem;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY & COMMON ELEMENTS
+   ========================================================================== */
+
+.kicker-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 252, 249, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  color: var(--text-brown);
+  margin-bottom: 1.1rem;
+}
+
+.display-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5.2vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.03;
+  color: var(--text-espresso);
+  margin-bottom: 1.2rem;
+}
+
+.display-title em {
+  font-style: italic;
+  color: var(--accent-sunset);
+}
+
+.section-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.8vw, 3.1rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-espresso);
+}
+
+.section-sub {
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  margin-top: 0.3rem;
+}
+
+.section-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   SCREEN 1: TRANSLUCENT FROSTED HERO BUBBLE OVER PHOTO BACKGROUND
+   ========================================================================== */
+
+.hero-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hero-content-box {
+  max-width: 630px;
+  background: rgba(249, 243, 241, 0.66);
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 26px;
+  padding: clamp(2rem, 4vw, 3.1rem);
+  box-shadow:
+    0 24px 60px rgba(35, 18, 11, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.lead-paragraph {
+  font-size: 1.08rem;
+  color: var(--text-espresso);
+  margin-bottom: 0.9rem;
+}
+
+.body-paragraph {
+  font-size: 0.96rem;
+  color: #4a281b;
+  margin-bottom: 1.85rem;
+}
+
+.body-paragraph strong {
+  color: var(--text-espresso);
+}
+
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent-sunset);
+  color: #fffcf9;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.82rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(212, 87, 46, 0.28);
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-sunset-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.82rem 1.35rem;
+  border-radius: 10px;
+  border: 1px solid rgba(88, 40, 23, 0.25);
+  background: rgba(255, 252, 249, 0.6);
+  color: var(--text-brown);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent-sunset);
+  background: rgba(255, 252, 249, 0.9);
+}
+
+/* ==========================================================================
+   SCREEN 2: POLAROID CASE STUDIES CAROUSEL + SCROLLBAR
+   ========================================================================== */
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+  padding: 0.5rem 0.15rem 1.25rem;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.4rem;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.polaroid-slide {
+  flex: 0 0 calc((100% - 2.8rem) / 3);
+  min-width: 0;
+  display: flex;
+}
+
+.polaroid-card {
+  background: #ffffff;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  padding: 0.95rem 0.95rem 1.25rem;
+  box-shadow: 0 12px 28px rgba(51, 25, 16, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  transition: transform 0.2s ease;
+}
+
+.polaroid-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Classic Polaroid Photo Area + Bottom Strip */
+.polaroid-frame {
+  background: #fdfbf8;
+  padding: 0.55rem 0.55rem 0.85rem;
+  border: 1px solid #ece3dc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.polaroid-media img,
+.polaroid-media video {
+  width: 100%;
+  aspect-ratio: 4 / 3.2;
+  object-fit: cover;
+  border-radius: 2px;
+  background: var(--bg-blush);
+}
+
+.polaroid-caption {
+  padding-top: 0.65rem;
+  text-align: center;
+}
+
+.polaroid-rating {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.18rem;
+  color: var(--accent-sunset);
+}
+
+.polaroid-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  gap: 0.95rem;
+  padding: 0 0.25rem;
+}
+
+.polaroid-text {
+  font-size: 0.9rem;
+  line-height: 1.52;
+  color: var(--text-espresso);
+}
+
+.polaroid-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border-warm);
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.reviewer-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border-strong);
+}
+
+.reviewer-meta-text {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.reviewer-name {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-brown);
+}
+
+.reviewer-ig {
+  font-size: 0.76rem;
+  color: var(--accent-sunset);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.review-trail-link {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  padding: 0.3rem 0.55rem;
+  border-radius: 6px;
+  background: var(--screen1-bg);
+  border: 1px solid var(--border-warm);
+  align-self: flex-start;
+  transition: all 0.15s ease;
+}
+
+.review-trail-link:hover {
+  border-color: var(--accent-sunset);
+  color: var(--accent-sunset);
+}
+
+/* Scrollbar underneath the reviews */
+.carousel-scrollbar-track {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: rgba(88, 40, 23, 0.14);
+  border-radius: 999px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.carousel-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: var(--accent-sunset);
+  border-radius: 999px;
+  transition: left 0.5s cubic-bezier(0.22, 1, 0.36, 1), width 0.3s ease;
+}
+
+/* ==========================================================================
+   SCREEN 3: UPCOMING HIKES (MAIN ACCENT) + COMPACT SUFFERING LEGEND
+   ========================================================================== */
+
+.hikes-section-hero-head {
+  margin-bottom: 2rem;
+}
+
+.main-hikes-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5vw, 4.1rem);
+  font-weight: 400;
+  line-height: 1.04;
+  color: var(--text-espresso);
+}
+
+/* Primary Accent: Prominent Hike Bubble Cards */
+.upcoming-list-wrapper {
+  margin-bottom: 2.75rem;
+}
+
+.hikes-bubbles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.hike-bubble {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 1.6rem 2rem;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-strong);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(88, 40, 23, 0.07);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.hike-bubble:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-sunset);
+  box-shadow: 0 16px 36px rgba(88, 40, 23, 0.12);
+}
+
+.hike-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.hike-title-link {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  line-height: 1.15;
+  color: var(--text-espresso);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.hike-title-link:hover {
+  color: var(--accent-sunset);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ext-arrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  line-height: 1;
+  opacity: 0.55;
+  display: inline-block;
+  margin-left: 0.15rem;
+}
+
+.hike-stats {
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.stat-sep {
+  color: var(--border-strong);
+}
+
+/* Right side of hike bubble: Hour estimation in top right, snack icons underneath it */
+.hike-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.45rem;
+  flex-shrink: 0;
+}
+
+.hours-estimate {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-brown);
+  letter-spacing: 0.02em;
+}
+
+.level-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+}
+
+.level-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.level-badge.easy {
+  background: var(--easy-bg);
+  color: var(--easy-text);
+  border: 1px solid var(--easy-border);
+}
+.level-dot.level-easy {
+  background: var(--easy-border);
+}
+
+.level-badge.medium {
+  background: var(--medium-bg);
+  color: var(--medium-text);
+  border: 1px solid var(--medium-border);
+}
+.level-dot.level-medium {
+  background: var(--medium-border);
+}
+
+.level-badge.hard {
+  background: var(--hard-bg);
+  color: var(--hard-text);
+  border: 1px solid var(--hard-border);
+}
+.level-dot.level-hard {
+  background: var(--hard-border);
+}
+
+.snack-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ration-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* Secondary Compact Legend: Gastronomic Classification */
+.classification-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-warm);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+}
+
+.classification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.classification-subheading {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--text-brown);
+  line-height: 1.15;
+}
+
+.classification-intro {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  max-width: 58ch;
+  margin-top: 0.2rem;
+}
+
+.classification-intro strong {
+  color: var(--text-brown);
+}
+
+/* Meal Agenda box: one icon stacked under another */
+.symbol-legend-box {
+  background: var(--screen1-bg);
+  border: 1px solid var(--border-warm);
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.symbol-legend-title {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.symbol-legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.76rem;
+  color: var(--text-brown);
+}
+
+.symbol-key-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.ration-icon-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+/* 3 Compact Complexity Cards */
+.tiers-agenda-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.tier-agenda-card {
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-warm);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.3rem;
+}
+
+.tier-agenda-card.tier-easy {
+  background: rgba(238, 243, 210, 0.65);
+  border-color: rgba(143, 163, 57, 0.55);
+}
+
+.tier-agenda-card.tier-medium {
+  background: rgba(250, 236, 200, 0.65);
+  border-color: rgba(217, 159, 54, 0.55);
+}
+
+.tier-agenda-card.tier-hard {
+  background: rgba(246, 221, 224, 0.65);
+  border-color: rgba(163, 50, 65, 0.55);
+}
+
+.tier-complexity-header {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text-espresso);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  line-height: 1.15;
+}
+
+.tier-hours-explanation {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-brown);
+}
+
+.tier-description {
+  font-size: 0.76rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.tier-sample-icons {
+  display: inline-flex;
+  gap: 0.25rem;
+  margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   SCREEN 4: DARKER END-OF-PAGE CONTACT SCREEN & PADDED COPYRIGHT FOOTER
+   ========================================================================== */
+
+.contact-center-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 3.5rem;
+}
+
+.contact-card-centered {
+  width: min(780px, 100%);
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-radius: 20px;
+  padding: clamp(2rem, 4.5vw, 3.25rem);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.contact-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.2vw, 3.4rem);
+  font-weight: 400;
+  color: var(--text-espresso);
+  margin-bottom: 0.75rem;
+}
+
+.contact-copy {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 54ch;
+  margin: 0 auto 2rem;
+}
+
+.contact-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.85rem;
+}
+
+.conn-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.95rem 1.1rem;
+  border-radius: 12px;
+  text-align: left;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.conn-btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.04);
+}
+
+.conn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.conn-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.conn-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.conn-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.conn-sub {
+  font-size: 0.73rem;
+  opacity: 0.88;
+  margin-top: 2px;
+}
+
+.conn-instagram {
+  background: linear-gradient(135deg, #8b2635 0%, #d4572e 55%, #e5a93c 100%);
+  color: #fffcf9;
+  box-shadow: 0 10px 24px rgba(139, 38, 53, 0.22);
+}
+
+.conn-telegram {
+  background: linear-gradient(135deg, #27698c 0%, #3888b2 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(39, 105, 140, 0.22);
+}
+
+.conn-email {
+  background: linear-gradient(135deg, #582817 0%, #7d4029 100%);
+  color: #f9f3f1;
+  box-shadow: 0 10px 24px rgba(88, 40, 23, 0.22);
+}
+
+.disclaimer {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-light);
+}
+
+/* Copyright Footer with left & right padding at the very bottom */
+.bottom-copyright {
+  width: 100%;
+  padding: 1.5rem 2.5rem 0;
+  border-top: 1px solid rgba(249, 243, 241, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: rgba(249, 243, 241, 0.68);
+}
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVENESS
+   ========================================================================== */
+
+@media (max-width: 960px) {
+  .screen {
+    padding: 4rem 0;
+  }
+
+  .polaroid-slide {
+    flex: 0 0 calc((100% - 1.4rem) / 2);
+  }
+
+  .tiers-agenda-grid,
+  .contact-buttons-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: 100%;
+    padding-inline: 1.25rem;
+  }
+
+  .screen-hero {
+    padding: 2.5rem 0;
+  }
+
+  .hero-content-box {
+    padding: 1.6rem 1.35rem;
+    border-radius: 20px;
+  }
+
+  .stats-stripe-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .polaroid-slide {
+    flex: 0 0 100%;
+  }
+
+  .hike-bubble {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem 1.3rem;
+    gap: 0.85rem;
+  }
+
+  .hike-right {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .classification-panel {
+    padding: 1.15rem 1.15rem;
+  }
+
+  .contact-card-centered {
+    padding: 1.85rem 1.35rem;
+    border-radius: 18px;
+  }
+
+  .bottom-copyright {
+    padding: 1.25rem 0.5rem 0;
+    flex-direction: column;
+    text-align: center;
+  }
+}
