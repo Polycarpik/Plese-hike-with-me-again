@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Warm sunset rounded tile -->
+  <rect width="64" height="64" rx="16" fill="#f9f3f1"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#e7c6b6" opacity="0.45"/>
+
+  <!-- Warm golden sun -->
+  <circle cx="44" cy="19" r="8" fill="#e5a93c"/>
+
+  <!-- Back terracotta mountain -->
+  <path d="M8 50 L25 22 L42 50 Z" fill="#d4572e"/>
+  <!-- Snow cap -->
+  <path d="M25 22 L19.8 30.5 L23 29 L25 31.5 L27 29 L30.2 30.5 Z" fill="#fffcf9"/>
+
+  <!-- Front espresso mountain -->
+  <path d="M26 50 L41 28 L56 50 Z" fill="#8b2635"/>
+
+  <!-- Cute stylized evergreen tree in foreground -->
+  <path d="M18 32 L11 43 H15 L10 51 H26 L21 43 H25 Z" fill="#445111"/>
+  <rect x="16.5" y="51" width="3" height="5" rx="1" fill="#582817"/>
+</svg>
