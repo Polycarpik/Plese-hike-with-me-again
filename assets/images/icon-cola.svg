@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="20" height="20">
+  <defs>
+    <linearGradient id="canRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff3b47"/>
+      <stop offset="30%" stop-color="#e61926"/>
+      <stop offset="80%" stop-color="#b80d18"/>
+      <stop offset="100%" stop-color="#8f0710"/>
+    </linearGradient>
+    <linearGradient id="metalRim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f3f5f7"/>
+      <stop offset="50%" stop-color="#c4ccd4"/>
+      <stop offset="100%" stop-color="#8b95a1"/>
+    </linearGradient>
+  </defs>
+  <!-- Top & bottom beveled metallic rims -->
+  <ellipse cx="32" cy="10" rx="15" ry="4" fill="url(#metalRim)"/>
+  <path d="M15 14 L17 10 L47 10 L49 14 Z" fill="url(#metalRim)"/>
+  <!-- Main red cola can body -->
+  <rect x="15" y="13" width="34" height="40" rx="4" fill="url(#canRed)"/>
+  <!-- Classic white Coca-Cola dynamic wave ribbon -->
+  <path d="M15 36 C23 26, 30 28, 36 33 C41 37, 45 36, 49 29 L49 35 C44 42, 39 43, 33 38 C27 33, 22 33, 15 42 Z" fill="#ffffff" opacity="0.96"/>
+  <!-- White script-like flourish above wave -->
+  <path d="M20 26 C24 22, 29 22, 32 25 C35 28, 40 27, 44 23" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+  <!-- Glossy vertical highlight on can -->
+  <rect x="19" y="14" width="3.5" height="38" rx="1.5" fill="#ffffff" opacity="0.32"/>
+  <!-- Bottom metallic rim -->
+  <path d="M15 51 L18 56 L46 56 L49 51 Z" fill="url(#metalRim)"/>
+  <ellipse cx="32" cy="56" rx="14" ry="3.2" fill="url(#metalRim)"/>
+  <!-- Top inner lid & pull tab -->
+  <ellipse cx="32" cy="10" rx="12" ry="2.5" fill="#9ea7b2"/>
+  <ellipse cx="34" cy="10" rx="3.5" ry="1.3" fill="#4a525a"/>
+</svg>

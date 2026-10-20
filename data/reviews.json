@@ -1,5 +1,19 @@
 [
   {
+    "id": "rev-005",
+    "dateAdded": "2026-10-20",
+    "reviewerName": "Zoko",
+    "reviewerAvatar": "assets/images/avatar-zoko.jpg",
+    "instagramHandle": "@zoko_the_doge",
+    "instagramUrl": "https://www.instagram.com/zoko_the_doge/",
+    "mediaType": "image",
+    "mediaUrl": "assets/images/review-zoko.jpg",
+    "rating": "12/10, was not consulted",
+    "reviewText": "Technically I do not have a choice. We get in the car, and I never know where we are going or whether we will be walking for twenty minutes or nine hours. Still the best day of my life every single time.",
+    "trailName": "Every Single Trail · Always",
+    "trailUrl": ""
+  },
+  {
     "id": "rev-004",
     "dateAdded": "2026-10-18",
     "reviewerName": "Niki",

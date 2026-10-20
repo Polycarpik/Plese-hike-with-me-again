@@ -8,9 +8,35 @@ const ICONS = {
   food: '🍱',
   // Snack icon: 🍏
   snack: '🍏',
+  // Custom Cola can SVG icon
+  cola: '<img src="assets/images/icon-cola.svg?v=21" alt="Cola" class="custom-ration-svg" />',
+  // Custom Haribo gummy bear SVG icon
+  haribo: '<img src="assets/images/icon-haribo.svg?v=21" alt="Haribo bear" class="custom-ration-svg" />',
+};
+
+const ICON_TITLES = {
+  food: 'Proper meal',
+  snack: 'Snack',
+  cola: 'Cola',
+  haribo: 'Haribos',
 };
 
 const FALLBACK_REVIEWS = [
+  {
+    id: 'rev-005',
+    dateAdded: '2026-10-20',
+    reviewerName: 'Zoko',
+    reviewerAvatar: 'assets/images/avatar-zoko.jpg',
+    instagramHandle: '@zoko_the_doge',
+    instagramUrl: 'https://www.instagram.com/zoko_the_doge/',
+    mediaType: 'image',
+    mediaUrl: 'assets/images/review-zoko.jpg',
+    rating: '12/10, was not consulted',
+    reviewText:
+      'Technically I do not have a choice. She puts the harness on, we get in the car, and I never know where we are going or whether we will be walking for twenty minutes or nine hours. Still the best day of my life every single time.',
+    trailName: 'Every Single Trail · Always',
+    trailUrl: '',
+  },
   {
     id: 'rev-004',
     dateAdded: '2026-10-18',
@@ -75,37 +101,28 @@ const FALLBACK_REVIEWS = [
 
 const FALLBACK_HIKES = [
   {
-    id: 'hike-001',
-    date: '2026-11-01',
-    title: 'That hill behind the monastery',
-    distanceKm: 6.4,
-    ascentM: 240,
-    durationHours: 2.0,
-    travelFromSofia: '35 min from Sofia',
-    komootUrl: 'https://www.komoot.com/discover',
+    id: 'hike-000',
+    date: '2026-10-25',
+    title: 'Cool view Vitosha sunset hike',
+    distanceKm: 7.5,
+    ascentM: 150,
+    durationHours: 3,
+    travelFromSofia: '25 min from Sofia',
+    komootUrl:
+      'https://www.komoot.com/tour/3358746839?share_token=aylsnoCz4sLEISiUxUSFq3nlnuRWrkhrQcIC6tkDnzNqjR8Hp1&ref=wtd&t_s=referral&t_cid=route_share&t_ref_username=2847412767240',
     snackProfile: ['snack'],
   },
   {
-    id: 'hike-002',
-    date: '2026-11-08',
-    title: 'Rila Ridge — Executive Contemplation Loop',
-    distanceKm: 14.8,
-    ascentM: 790,
-    durationHours: 5.5,
-    travelFromSofia: '1h 20m from Sofia',
-    komootUrl: 'https://www.komoot.com/discover',
-    snackProfile: ['food', 'snack', 'snack'],
-  },
-  {
-    id: 'hike-003',
-    date: '2026-11-15',
-    title: 'Pirin Full-Day Synergy & Calf Destruction',
-    distanceKm: 24.5,
-    ascentM: 1520,
-    durationHours: 8.5,
-    travelFromSofia: '2h 15m from Sofia',
-    komootUrl: 'https://www.komoot.com/discover',
-    snackProfile: ['food', 'food', 'snack', 'snack', 'snack'],
+    id: 'hike-001',
+    date: '2026-10-20',
+    title: 'Vitosha 100 — Trail run competition I want to eventually do',
+    distanceKm: 100.0,
+    ascentM: 2010,
+    durationHours: 12,
+    travelFromSofia: '15 min from Sofia',
+    komootUrl:
+      'https://www.komoot.com/tour/3323568513?share_token=asE2gTdNa2eNFiQ0upRREGF6n6LUi0n1QKUX58400ECgjnXw3P&ref=wtd&t_s=referral&t_cid=route_share&t_ref_username=2847412767240',
+    snackProfile: ['cola', 'cola', 'haribo', 'haribo', 'haribo'],
   },
 ];
 
@@ -119,19 +136,26 @@ function escapeHtml(str) {
 
 function classifyHike(hike) {
   const h = Number(hike.durationHours) || 0;
+  const d = Number(hike.distanceKm) || 0;
   let tier = 'easy';
   let gradeLabel = 'Easy';
+  let isSkull = false;
   let hoursLabel = `~${h}h`;
   let defaultProfile = ['snack'];
 
-  if (h > 3.5 && h <= 7) {
-    tier = 'medium';
-    gradeLabel = 'Medium';
-    defaultProfile = ['food', 'snack', 'snack'];
+  if (hike.tier === 'legendary' || hike.tier === 'questionable' || h > 10 || d >= 45) {
+    tier = 'questionable';
+    gradeLabel = 'Legendary';
+    isSkull = true;
+    defaultProfile = ['cola', 'cola', 'haribo', 'haribo', 'haribo'];
   } else if (h > 7) {
     tier = 'hard';
     gradeLabel = 'Hardcore';
     defaultProfile = ['food', 'food', 'snack', 'snack', 'snack'];
+  } else if (h > 3.5) {
+    tier = 'medium';
+    gradeLabel = 'Medium';
+    defaultProfile = ['food', 'snack', 'snack'];
   }
 
   const profile =
@@ -139,7 +163,7 @@ function classifyHike(hike) {
       ? hike.snackProfile
       : defaultProfile;
 
-  return { tier, gradeLabel, hoursLabel, profile };
+  return { tier, gradeLabel, isSkull, hoursLabel, profile };
 }
 
 function renderLegendIcons() {
@@ -156,12 +180,13 @@ function renderLegendIcons() {
     let tier = 'easy';
     if (parentCard?.classList.contains('tier-medium')) tier = 'medium';
     if (parentCard?.classList.contains('tier-hard')) tier = 'hard';
+    if (parentCard?.classList.contains('tier-questionable')) tier = 'questionable';
 
     el.innerHTML = items
       .map(
         (type) =>
-          `<span class="ration-chip ${tier}" title="${type === 'food' ? 'Proper meal' : 'Snack'}">
-            ${type === 'food' ? ICONS.food : ICONS.snack}
+          `<span class="ration-chip ${tier}" title="${ICON_TITLES[type] || 'Snack'}">
+            ${ICONS[type] || ICONS.snack}
           </span>`
       )
       .join('');
@@ -203,6 +228,15 @@ async function initReviews() {
         ? `<a href="${escapeHtml(rev.instagramUrl)}" target="_blank" rel="noopener noreferrer" class="reviewer-ig">${escapeHtml(rev.instagramHandle || '@' + rev.reviewerName.toLowerCase())}</a>`
         : '';
 
+      const hasTrailUrl = Boolean(rev.trailUrl && rev.trailUrl.trim());
+      const trailMarkup = rev.trailName
+        ? hasTrailUrl
+          ? `<a href="${escapeHtml(rev.trailUrl.trim())}" target="_blank" rel="noopener noreferrer" class="review-trail-link">
+               ${escapeHtml(rev.trailName)} <span class="ext-arrow">↗</span>
+             </a>`
+          : `<span class="review-trail-static">${escapeHtml(rev.trailName)}</span>`
+        : '';
+
       return `
         <div class="polaroid-slide">
           <article class="polaroid-card">
@@ -226,9 +260,7 @@ async function initReviews() {
                     ${igLink}
                   </div>
                 </div>
-                <a href="${escapeHtml(rev.trailUrl)}" target="_blank" rel="noopener noreferrer" class="review-trail-link">
-                  ${escapeHtml(rev.trailName)} <span class="ext-arrow">↗</span>
-                </a>
+                ${trailMarkup}
               </div>
             </div>
           </article>
@@ -281,13 +313,13 @@ async function initReviews() {
 
   let timer = setInterval(() => {
     if (!paused) goTo(current + 1);
-  }, 5000);
+  }, 20000);
 
   function resetTimer() {
     clearInterval(timer);
     timer = setInterval(() => {
       if (!paused) goTo(current + 1);
-    }, 5000);
+    }, 20000);
   }
 
   scrollbarTrack?.addEventListener('click', (e) => {
@@ -334,7 +366,7 @@ async function initHikes() {
 
   listEl.innerHTML = hikes
     .map((hike) => {
-      const { tier, gradeLabel, hoursLabel, profile } = classifyHike(hike);
+      const { tier, gradeLabel, isSkull, hoursLabel, profile } = classifyHike(hike);
       const ascent = hike.ascentM ?? hike.elevationGainM ?? 0;
       const rawTravel = hike.travelFromSofia || 'TBD from Sofia';
       const cleanTravel = rawTravel
@@ -342,11 +374,15 @@ async function initHikes() {
         .replace(/\s*from\s+sofia$/i, '')
         .trim();
 
+      const indicatorHtml = isSkull
+        ? `<span class="level-skull" aria-hidden="true">💀</span>`
+        : `<span class="level-dot level-${tier}"></span>`;
+
       const iconsHtml = profile
         .map((type) => {
-          const isFood = type === 'food';
-          const title = isFood ? 'Proper meal' : 'Snack';
-          return `<span class="ration-chip ${tier}" title="${title}">${isFood ? ICONS.food : ICONS.snack}</span>`;
+          const title = ICON_TITLES[type] || 'Snack';
+          const icon = ICONS[type] || ICONS.snack;
+          return `<span class="ration-chip ${tier}" title="${title}">${icon}</span>`;
         })
         .join('');
 
@@ -359,7 +395,7 @@ async function initHikes() {
             </a>
             <div class="hike-stats">
               <span class="level-badge ${tier}">
-                <span class="level-dot level-${tier}"></span>
+                ${indicatorHtml}
                 ${escapeHtml(gradeLabel)}
               </span>
               <span class="stat-sep">·</span>

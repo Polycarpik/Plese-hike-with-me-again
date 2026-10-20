@@ -50,9 +50,9 @@ def scrape_komoot(url: str) -> dict:
         else "Unnamed Komoot Hike"
     )
 
-    dist_m = re.search(r'["\']distance["\']\s*:\s*([0-9]+(?:\.[0-9]+)?)', html)
-    dur_s = re.search(r'["\']duration["\']\s*:\s*([0-9]+(?:\.[0-9]+)?)', html)
-    elev_m = re.search(r'["\']elevation_up["\']\s*:\s*([0-9]+(?:\.[0-9]+)?)', html)
+    dist_m = re.search(r'\\?["\']distance\\?["\']\s*:\s*([0-9]+(?:\.[0-9]+)?)', html)
+    dur_s = re.search(r'\\?["\']duration\\?["\']\s*:\s*([0-9]+(?:\.[0-9]+)?)', html)
+    elev_m = re.search(r'\\?["\']elevation_up\\?["\']\s*:\s*([0-9]+(?:\.[0-9]+)?)', html)
 
     distance_km = round(float(dist_m.group(1)) / 1000.0, 1) if dist_m else 12.0
     duration_hours = round(float(dur_s.group(1)) / 3600.0, 1) if dur_s else 4.5
