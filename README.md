@@ -18,12 +18,12 @@ Then open **http://localhost:8080** in your browser.
 
 ### 1. Swap in Your Photos & Videos
 Drop your own `.jpg`, `.png`, `.webp`, or `.mp4` files into `assets/images/` (or `assets/videos/`) and update the paths:
-- **Screen 1 Hero Photo:** Edit `src="assets/images/hero-polina-zoko.svg"` in `index.html`.
-- **Screen 1 Manifesto Portrait:** Edit `src="assets/images/portrait-polina-zoko.svg"` in `index.html`.
+- **Screen 1 Hero Photo:** Edit the `assets/images/hero-polina-zoko.jpg` background in `css/styles.css`.
+- **Screen 1 Manifesto Portrait:** Edit `src="assets/images/hi-guide.jpg"` in `index.html`.
 - **Reviews & Hikes Media:** Point `mediaUrl`, `reviewerAvatar`, and `coverImage` in `data/reviews.json` and `data/hikes.json` to your files.
 
 ### 2. Add or Edit Reviews (`data/reviews.json`)
-- Unlimited reviews are supported and are **automatically sorted by `dateAdded` (newest first)**.
+- Unlimited reviews are supported and are **sorted with Zoko first, then by `dateAdded` (newest first)**.
 - Set `"mediaType": "video"` or `"image"`.
 - If `"instagramUrl"` is provided, the reviewer's name becomes a clickable link with an `IG ↗` badge; if empty (`""`), it renders as plain text.
 - Set `"trailPlatform"` to `"Komoot"` or `"Garmin"` and provide `"trailUrl"`.

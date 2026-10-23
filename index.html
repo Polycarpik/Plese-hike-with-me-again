@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=21" />
+  <link rel="stylesheet" href="css/styles.css?v=36" />
 </head>
 <body>
 
@@ -30,8 +30,7 @@
             With years of experience walking in mostly the right direction, I provide end-to-end trail solutions for individuals seeking quiet, perspective, and sore legs. For a modest fee of zero, I will bring that solitude to you, alongside several other people, which somewhat defeats the point.
           </p>
           <div class="hero-cta-row">
-            <a href="#screen-3" class="btn-primary">View upcoming hikes →</a>
-            <a href="#screen-2" class="btn-secondary">Read case studies</a>
+            <a href="#screen-3" class="btn-primary">View next hikes →</a>
           </div>
         </div>
       </div>
@@ -59,6 +58,63 @@
         <p class="stats-footnote">
           *From the hike. Returning for another one is a separate metric we do not track.
         </p>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         YOURS FAITHFULLY: ABOUT THE GUIDE (FULL PHOTO ON RIGHT / AVATAR ON MOBILE)
+         ===================================================================== -->
+    <section id="yours-faithfully" class="screen screen-faithfully">
+      <div class="container">
+        <div class="about-split-layout">
+          <!-- Left Column: Open Editorial Bio -->
+          <div class="about-editorial-col">
+            <div class="about-header-row">
+              <div class="about-header-text">
+                <h2 class="section-heading">
+                  Best guide. <em>Ever.</em>
+                </h2>
+                <p class="about-subtitle">( me )</p>
+              </div>
+              <img
+                src="assets/images/hi-guide-avatar.jpg"
+                alt="Polina smiling in a cap and sunglasses by an alpine lake"
+                class="about-mobile-avatar"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="about-prose">
+              <p>
+                First of all, we <strong>never</strong> get lost—sometimes the physical trail simply chooses not to be in the exact same spot as the GPS track. Besides that, my main qualification as a guide is a chronic inability to take elevation profiles seriously: when I promise a flat, scenic walk, it is rarely flat, occasionally scenic, and almost always character-building.
+              </p>
+              <p>
+                Honestly, I am just grateful that I have a dog. Without Zoko—who has no legal standing to decline a 6:00 AM car ride and zero concept of vertical meters—no one would go to the mountains with me at all.
+              </p>
+              <p>
+                My boyfriend has officially refused to be further exploited on my “relaxed Sunday strolls,” and my existing friends now mysteriously lose cell service whenever I text them a Komoot link. Which is why this website exists: I am actively recruiting new friends who haven’t learned their lesson yet. <strong>And that’s your chance!</strong>
+              </p>
+            </div>
+
+            <hr class="about-divider" />
+
+            <div class="about-signoff">
+              <p class="about-signoff-line">Yours faithfully,</p>
+              <p class="about-signoff-line">Polina <em>(and Zoko, who wasn’t asked)</em></p>
+            </div>
+          </div>
+
+          <!-- Right Column: Full Guide Photo (Desktop) -->
+          <div class="about-photo-col">
+            <figure class="about-photo-frame">
+              <img
+                src="assets/images/hi-guide.jpg"
+                alt="Polina crouching by a turquoise alpine lake in front of a massive Dolomite mountain peak, holding a cup of beer"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -104,14 +160,7 @@
           </p>
         </div>
 
-        <!-- Primary Focus: Upcoming Hikes Bubble Cards -->
-        <div class="upcoming-list-wrapper">
-          <div class="hikes-bubbles-list" id="hikes-list">
-            <!-- Populated by js/app.js from data/hikes.json -->
-          </div>
-        </div>
-
-        <!-- Secondary Compact Legend: Gastronomic Effort & Suffering Classification -->
+        <!-- Compact Legend First: Gastronomic Effort & Suffering Classification -->
         <div class="classification-panel">
           <div class="classification-header">
             <div>
@@ -217,6 +266,13 @@
             </div>
           </div>
         </div>
+
+        <!-- Upcoming Hikes Bubble Cards -->
+        <div class="upcoming-list-wrapper">
+          <div class="hikes-bubbles-list" id="hikes-list">
+            <!-- Populated by js/app.js from data/hikes.json -->
+          </div>
+        </div>
       </div>
     </section>
 
@@ -284,6 +340,6 @@
     </section>
   </main>
 
-  <script src="js/app.js?v=21" defer></script>
+  <script src="js/app.js?v=27" defer></script>
 </body>
 </html>

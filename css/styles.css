@@ -170,6 +170,141 @@ a {
   margin-top: 0.85rem;
 }
 
+/* Yours Faithfully: About the Guide & Single Photo on the Right */
+.screen-faithfully {
+  background-color: #e9f0ee;
+  background-image:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent calc(50% - 580px),
+      #e9f0ee calc(50% - 580px),
+      #e9f0ee calc(50% + 580px),
+      transparent calc(50% + 580px),
+      transparent 100%
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewBox='0 0 128 128'%3E%3Cg fill='none' stroke='%23bfd0cc' stroke-width='1.35' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M23 36 L30 24 L34 31 L37 26.5 L42 36 Z'/%3E%3Cpath d='M87 100 L94 88 L98 95 L101 90.5 L106 100 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat, repeat;
+  background-size: 100% 100%, 128px 128px;
+}
+
+.about-split-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(1.75rem, 4vw, 3.75rem);
+}
+
+.about-editorial-col {
+  flex: 1 1 55%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  max-width: 52ch;
+  margin-bottom: 1.35rem;
+}
+
+.about-header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.45rem, 2.1vw, 1.85rem);
+  line-height: 1.15;
+  color: #a64222;
+  margin-top: 0.25rem;
+}
+
+.about-mobile-avatar {
+  display: none;
+  width: clamp(148px, 38vw, 172px);
+  height: clamp(148px, 38vw, 172px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3.5px solid #fdfbf8;
+  box-shadow: 0 12px 28px rgba(24, 38, 36, 0.18);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 3;
+}
+
+.about-prose {
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+  font-size: 0.95rem;
+  line-height: 1.62;
+  color: var(--text-espresso);
+  max-width: 52ch;
+}
+
+.about-prose strong {
+  color: var(--text-espresso);
+  font-weight: 700;
+}
+
+.about-divider {
+  width: 100%;
+  max-width: 52ch;
+  border: none;
+  border-top: 1px solid rgba(51, 25, 16, 0.16);
+  margin: 1.65rem 0 1.4rem;
+}
+
+.about-signoff {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  line-height: 1.18;
+  color: var(--text-espresso);
+}
+
+.about-signoff em {
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  margin-left: 0.15rem;
+}
+
+.about-photo-col {
+  flex: 0 0 40%;
+  max-width: 420px;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-photo-frame {
+  width: 100%;
+  max-width: 440px;
+  background: #fdfbf8;
+  padding: 0.7rem;
+  border: 1.5px solid #cfd9d6;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(24, 38, 36, 0.12);
+}
+
+.about-photo-frame img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
 /* Screen 2: Polaroid Case Studies */
 .screen-reviews {
   background-color: var(--screen2-bg);
@@ -239,12 +374,21 @@ a {
   color: #f7e6d0;
 }
 
-.section-heading {
+.section-heading,
+.main-hikes-heading,
+.contact-heading {
   font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 3.8vw, 3.1rem);
+  font-size: clamp(2.5rem, 4.2vw, 3.4rem);
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.06;
+  letter-spacing: -0.015em;
   color: var(--text-espresso);
+}
+
+.section-heading em,
+.main-hikes-heading em,
+.contact-heading em {
+  font-style: italic;
 }
 
 .section-sub {
@@ -429,6 +573,7 @@ a {
   font-size: 0.9rem;
   line-height: 1.52;
   color: var(--text-espresso);
+  white-space: pre-line;
 }
 
 .polaroid-footer {
@@ -523,17 +668,9 @@ a {
   margin-bottom: 2rem;
 }
 
-.main-hikes-heading {
-  font-family: var(--font-serif);
-  font-size: clamp(2.8rem, 5vw, 4.1rem);
-  font-weight: 400;
-  line-height: 1.04;
-  color: var(--text-espresso);
-}
-
 /* Primary Accent: Prominent Hike Bubble Cards */
 .upcoming-list-wrapper {
-  margin-bottom: 2.75rem;
+  margin-bottom: 0;
 }
 
 .hikes-bubbles-list {
@@ -714,6 +851,7 @@ a {
   border: 1px solid var(--border-warm);
   border-radius: 14px;
   padding: 1.25rem 1.5rem;
+  margin-bottom: 2.25rem;
 }
 
 .classification-header {
@@ -882,10 +1020,6 @@ a {
 }
 
 .contact-heading {
-  font-family: var(--font-serif);
-  font-size: clamp(2.4rem, 4.2vw, 3.4rem);
-  font-weight: 400;
-  color: var(--text-espresso);
   margin-bottom: 0.75rem;
 }
 
@@ -1006,6 +1140,38 @@ a {
   .tiers-agenda-grid,
   .contact-buttons-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .screen-faithfully {
+    padding-top: 2.6rem;
+  }
+
+  .about-photo-col {
+    display: none;
+  }
+
+  .about-editorial-col {
+    flex: 1 1 100%;
+  }
+
+  .about-header-row {
+    max-width: 100%;
+    align-items: flex-end;
+    gap: 0.75rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .about-prose,
+  .about-divider {
+    max-width: 100%;
+  }
+
+  .about-mobile-avatar {
+    display: block;
+    margin-top: -3.6rem;
+    margin-bottom: -0.35rem;
   }
 }
 
