@@ -92,8 +92,9 @@ const FALLBACK_REVIEWS = [
     "reviewText": "Being her sister did not qualify me for mercy. We climbed the first 30 meters of the trail, I immediately overheated, and I officially announced I am never hiking with her ever again. We are still related, but only at sea level.",
     "trailName": "The First 30 Meters — Sisterly Betrayal",
     "trailUrl": ""
-  },
-  {
+  }
+  */
+  ,{
     "id": "rev-010",
     "dateAdded": "2026-04",
     "reviewerName": "Kate",
@@ -107,7 +108,6 @@ const FALLBACK_REVIEWS = [
     "trailName": "Almost There — Snack Recovery Edition · Apr 2026",
     "trailUrl": "https://www.komoot.com/tour/2855159002?share_token=abcFNseJJYASZGfoaaQRV0EENawkggkLxrwRptM623ZStlkZxB&ref=wtd&t_s=referral&t_cid=route_share&t_ref_username=2847412767240"
   }
-  */
 ];
 
 const FALLBACK_HIKES = [
